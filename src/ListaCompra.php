@@ -30,7 +30,8 @@ class ListaCompra
         }
         elseif($estadoExplode[0] == "vaciar")
         {
-
+            $this->lista = [];
+            return " ";
         }
     }
 }

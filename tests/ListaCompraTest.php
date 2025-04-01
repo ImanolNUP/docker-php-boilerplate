@@ -17,4 +17,14 @@ class ListaCompraTest extends TestCase
 
         $this->assertEquals("pan 3", $result);
     }
+    /**
+     * @test
+     */
+    public function vaciarListaCompra(){
+        $listaCompra = new ListaCompra();
+
+        $result = $listaCompra->estadoActual("vaciar");
+
+        $this->assertEquals(" ", $result);
+    }
 }
