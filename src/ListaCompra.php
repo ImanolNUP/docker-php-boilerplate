@@ -26,7 +26,18 @@ class ListaCompra
         }
         elseif($estadoExplode[0] == "eliminar")
         {
-
+            $posicion = array_search($estadoExplode[1], $this->lista);
+            if($posicion !== false)
+            {
+                return "no existe el elemento indicado"
+            }
+            else
+            {
+                $longitud = count($this->lista);
+                $this->lista[$longitud+1] = $estadoExplode[1]." ".$estadoExplode[2];
+                natcasesort($this->lista);
+            }
+            return implode(" ,", $this->lista);
         }
         elseif($estadoExplode[0] == "vaciar")
         {
